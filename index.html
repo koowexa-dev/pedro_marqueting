@@ -3,785 +3,696 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="description" content="Pedro Marqueting · Agencia de marketing digital especializada en publicidad efectiva, campañas en redes sociales, SEO y plataformas locales. Resultados medibles para tu negocio." />
-<meta name="theme-color" content="#4f46e5" />
+<meta name="description" content="Pedro Marqueting · Agencia Digital. Publicidad estratégica que genera ventas reales, medibles y escalables." />
 <title>Pedro Marqueting · Agencia Digital</title>
 <link rel="icon" type="image/jpeg" href="pq.jpg" />
 <link rel="apple-touch-icon" href="pq.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: #0a0a0f;
-  color: #f0f0f5;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-img {
-  max-width: 100%;
-  display: block;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-h1 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-h2 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 0.8rem;
-}
-h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(10, 10, 15, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.2s ease;
-}
-.header.scrolled {
-  background: rgba(10, 10, 15, 0.98);
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  gap: 16px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-.logo img {
-  height: 38px;
-  width: auto;
-  border-radius: 8px;
-  background: #fff;
-  object-fit: cover;
-}
-.logo span {
-  color: white;
-  letter-spacing: -0.3px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.nav-links a {
-  padding: 8px 14px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border-radius: 8px;
-  color: #b0b0c0;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-links a:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.btn-primary {
-  background: #4f46e5;
-  color: white;
-  border: none;
-}
-.btn-primary:hover {
-  background: #6366f1;
-}
-.btn-whatsapp {
-  background: #25d366;
-  color: white;
-}
-.btn-whatsapp:hover {
-  background: #20bd59;
-}
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e0e0e8;
-}
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-.btn-lg {
-  padding: 12px 24px;
-  font-size: 0.9rem;
-}
-.menu-toggle {
-  display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  align-items: center;
-  justify-content: center;
-}
-.menu-toggle span {
-  width: 20px;
-  height: 2px;
-  background: white;
-  position: relative;
-  transition: 0.2s;
-}
-.menu-toggle span::before,
-.menu-toggle span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 2px;
-  background: white;
-  transition: 0.2s;
-}
-.menu-toggle span::before { top: -6px; }
-.menu-toggle span::after { top: 6px; }
-.menu-toggle.active span { background: transparent; }
-.menu-toggle.active span::before { top: 0; transform: rotate(45deg); }
-.menu-toggle.active span::after { top: 0; transform: rotate(-45deg); }
-.hero {
-  padding: 110px 0 60px;
-  position: relative;
-}
-.hero-inner {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  padding: 6px 14px;
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #c7d2fe;
-  margin-bottom: 20px;
-}
-.badge-dot {
-  width: 8px;
-  height: 8px;
-  background: #10b981;
-  border-radius: 50%;
-  display: inline-block;
-}
-.hero p {
-  font-size: 1rem;
-  color: #b0b0c0;
-  max-width: 600px;
-  margin: 0 auto 32px;
-}
-.hero-ctas {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  background: #11111a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 24px 20px;
-}
-.metric {
-  text-align: center;
-}
-.metric-value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #6366f1;
-  letter-spacing: -0.02em;
-}
-.metric-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #7a7a8c;
-  letter-spacing: 0.06em;
-  margin-top: 4px;
-}
-section {
-  padding: 70px 0;
-}
-.section-head {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-}
-.section-label {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #8b5cf6;
-  margin-bottom: 12px;
-}
-.section-head p {
-  color: #a0a0b2;
-  font-size: 0.95rem;
-}
-.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.feature {
-  background: #11111a;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 24px 20px;
-  transition: border 0.2s;
-}
-.feature:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-}
-.feature-icon {
-  width: 44px;
-  height: 44px;
-  background: #4f46e5;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 18px;
-}
-.feature h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.feature p {
-  font-size: 0.85rem;
-  color: #a0a0b2;
-  line-height: 1.45;
-}
-.services {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.service {
-  background: #11111a;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 28px;
-  transition: border 0.2s;
-}
-.service:hover {
-  border-color: rgba(99, 102, 241, 0.35);
-}
-.service-tag {
-  display: inline-block;
-  background: rgba(34, 211, 238, 0.12);
-  color: #22d3ee;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-}
-.service h3 {
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
-.service p {
-  font-size: 0.85rem;
-  color: #b0b0c0;
-  margin-bottom: 20px;
-}
-.service-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #a78bfa;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.cta-section {
-  padding: 50px 0 40px;
-}
-.cta-card {
-  background: #4f46e5;
-  border-radius: 28px;
-  padding: 50px 32px;
-  text-align: center;
-  box-shadow: 0 10px 30px -12px rgba(79, 70, 229, 0.35);
-}
-.cta-card h2 {
-  color: white;
-  margin-bottom: 12px;
-}
-.cta-card p {
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 520px;
-  margin: 0 auto 28px;
-}
-.cta-card .btn-whatsapp {
-  background: white;
-  color: #1f1f2e;
-}
-.cta-card .btn-whatsapp:hover {
-  background: #f0f0f5;
-}
-.cta-card .btn-primary {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.cta-card .btn-primary:hover {
-  background: rgba(0, 0, 0, 0.4);
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.contact-card {
-  background: #11111a;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  transition: border 0.2s;
-}
-.contact-card:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-}
-.contact-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  margin: 0 auto 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-.contact-card.whatsapp .contact-icon {
-  background: #25d366;
-}
-.contact-card.email .contact-icon {
-  background: #4f46e5;
-}
-.contact-card h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.contact-card p {
-  font-size: 0.75rem;
-  color: #a0a0b2;
-  margin-bottom: 14px;
-}
-.contact-card .btn {
-  width: 100%;
-}
-.social-section {
-  padding: 32px 0 0;
-  margin-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-.social-title {
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #8a8aa0;
-  margin-bottom: 20px;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #11111a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: border 0.2s;
-}
-.social-link svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-.social-link:hover {
-  border-color: #6366f1;
-  background: #1a1a28;
-}
-footer {
-  padding: 40px 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: #07070c;
-}
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-text {
-  font-size: 0.75rem;
-  color: #7a7a8c;
-}
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-.footer-links a {
-  font-size: 0.75rem;
-  color: #a0a0b2;
-}
-.footer-links a:hover {
-  color: white;
-}
-.whatsapp-float {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 999;
-}
-.whatsapp-float a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: #25d366;
-  border-radius: 30px;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-  transition: transform 0.15s;
-}
-.whatsapp-float a:hover {
-  transform: scale(1.05);
-}
-.whatsapp-float svg {
-  width: 30px;
-  height: 30px;
-  fill: white;
-}
-@media (max-width: 900px) {
-  .features {
-    grid-template-columns: repeat(2, 1fr);
+  :root{
+    /* Nueva paleta: amarillos, negro, blanco */
+    --amarillo-oscuro: #d97706;    /* ámbar profundo */
+    --amarillo-base: #f59e0b;      /* ámbar brillante */
+    --amarillo-claro: #fef08a;     /* amarillo suave */
+    --amarillo-pastel: #fffbeb;
+    --negro-absolute: #000000;
+    --negro-carbon: #0a0a0c;
+    --gris-oscuro: #161616;
+    --blanco: #ffffff;
+    --blanco-humo: #f5f5f5;
+    
+    /* Fondo principal y superficies con negro + toques cálidos */
+    --bg-0: #010101;
+    --bg-1: #0c0c0c;
+    --bg-2: #141414;
+    --surface: rgba(0, 0, 0, 0.68);
+    --surface-strong: rgba(0, 0, 0, 0.85);
+    --border: rgba(245, 158, 11, 0.25);
+    --border-strong: rgba(254, 240, 138, 0.5);
+    --text: #fef9e6;
+    --text-dim: #fdebb3;
+    --text-mute: #d4af5a;
+    
+    /* Gradientes exclusivos en gama amarillo / negro / blanco */
+    --grad-primary: linear-gradient(135deg, #d97706 0%, #f59e0b 40%, #fef08a 100%);
+    --grad-accent: linear-gradient(125deg, #eab308, #fef08a);
+    --grad-dark: linear-gradient(145deg, #000000, #1a1205);
+    --grad-text: linear-gradient(135deg, #ffde9c 0%, #fbbf24 45%, #fef08a 100%);
+    --glow: 0 0 30px rgba(245, 158, 11, 0.55);
+    --glow-accent: 0 0 35px rgba(254, 240, 138, 0.65);
+    --shadow-sm: 0 6px 14px rgba(0,0,0,0.6);
+    --shadow: 0 18px 36px rgba(0,0,0,0.7);
+    --shadow-lg: 0 28px 50px rgba(0,0,0,0.8);
+    --radius-sm: 12px;
+    --radius: 18px;
+    --radius-lg: 28px;
   }
-  .services {
-    grid-template-columns: 1fr;
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--negro-carbon);
+    color:var(--text);
+    line-height:1.55;
+    overflow-x:hidden;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
   }
-  .metrics {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
-    gap: 20px;
+
+  /* Fondos con textura y blobs amarillos */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+      radial-gradient(1100px 800px at 5% 10%, rgba(217,119,6,0.2), transparent 65%),
+      radial-gradient(950px 700px at 95% 20%, rgba(254,240,138,0.12), transparent 70%),
+      radial-gradient(800px 700px at 20% 100%, rgba(245,158,11,0.18), transparent 65%),
+      linear-gradient(135deg, #030303 0%, #0a0a0a 80%, #000000 100%);
   }
-  .contact-grid {
-    grid-template-columns: 1fr;
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background-image: repeating-linear-gradient(0deg, rgba(245,158,11,0.04) 1px, transparent 1px, transparent 20px);
+    pointer-events:none;
   }
-  .nav-links {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: #0a0a0fcc;
-    backdrop-filter: blur(12px);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transform: translateY(-120%);
-    transition: transform 0.25s ease;
-    z-index: 99;
+
+  /* Blobs con amarillos oscuros y claros */
+  .blob{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(110px);
+    opacity:0.45;
+    z-index:-1;
+    pointer-events:none;
+    animation:float 22s ease-in-out infinite;
   }
-  .nav-links.open {
-    transform: translateY(0);
+  .blob.b1{width:560px;height:560px;background:#d97706;top:-200px;left:-180px;opacity:0.3}
+  .blob.b2{width:480px;height:480px;background:#f59e0b;bottom:-140px;right:-110px;animation-delay:-7s;opacity:0.35}
+  .blob.b3{width:420px;height:420px;background:#fbbf24;top:35%;right:-100px;animation-delay:-14s;opacity:0.25}
+
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1)}
+    30%{transform:translate(20px,-30px) scale(1.07)}
+    70%{transform:translate(-15px,25px) scale(0.96)}
   }
-  .nav-links a {
-    width: 100%;
-    padding: 12px;
-    text-align: center;
+  .container{width:min(1240px,92%);margin:0 auto;}
+
+  /* ===== NAVBAR ===== */
+  .nav{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    padding:18px 0;
+    transition:all .3s cubic-bezier(0.2,0.9,0.4,1.1);
+    backdrop-filter:blur(0px);
   }
-  .nav-links .btn-whatsapp {
-    margin-top: 8px;
+  .nav.scrolled{
+    padding:8px 0;
+    background:rgba(0,0,0,0.82);
+    backdrop-filter:blur(16px) saturate(180%);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 6px 24px rgba(0,0,0,0.7);
   }
-  .menu-toggle {
-    display: flex;
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;color:var(--text);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;
   }
-  .header .btn-menu {
-    display: none;
+  .brand-img{
+    width:44px;height:44px;border-radius:16px;
+    object-fit:cover;
+    box-shadow:0 0 0 1px rgba(254,240,138,0.4), 0 6px 12px rgba(0,0,0,0.5);
+    background:#000;
+    transition:transform 0.2s ease;
   }
-  .hero {
-    padding: 100px 0 50px;
+  .brand:hover .brand-img{transform:scale(1.02);}
+  .brand-text span{
+    background:var(--grad-text);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:700;
   }
-  section {
-    padding: 60px 0;
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+  .nav-links a{
+    color:var(--text-dim);text-decoration:none;
+    padding:10px 18px;border-radius:40px;
+    font-size:.94rem;font-weight:500;
+    transition:all .2s ease;
   }
-  .section-head {
-    margin-bottom: 36px;
+  .nav-links a:hover{color:var(--blanco);background:rgba(245,158,11,0.2);backdrop-filter:blur(8px);}
+  
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:12px 26px;border-radius:44px;font-weight:600;font-size:.92rem;
+    text-decoration:none;border:none;cursor:pointer;
+    transition:all .25s cubic-bezier(0.2,0.9,0.4,1.1);
+    white-space:nowrap;
+    font-family:inherit;
   }
-  .cta-card {
-    padding: 36px 24px;
+  .btn-primary{
+    background:var(--grad-primary);
+    color:#0a0a0a;
+    box-shadow:0 8px 20px rgba(217,119,6,0.45);
+    font-weight:700;
   }
-}
-@media (max-width: 600px) {
-  .container {
-    padding: 0 18px;
+  .btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 32px rgba(245,158,11,0.7);
+    color:#000;
   }
-  .features {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .btn-ghost{
+    background:rgba(0,0,0,0.65);
+    color:var(--amarillo-claro);
+    border:1px solid rgba(254,240,138,0.5);
+    backdrop-filter:blur(8px);
   }
-  .metrics {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .btn-ghost:hover{
+    background:rgba(217,119,6,0.3);
+    border-color:var(--amarillo-claro);
+    color:#fff;
+    transform:translateY(-2px);
   }
-  .hero-ctas {
-    flex-direction: column;
-    width: 100%;
+  .btn-wa{
+    background:linear-gradient(135deg, #f59e0b, #d97706);
+    color:#111;
+    box-shadow:0 8px 18px rgba(217,119,6,0.55);
+    font-weight:700;
   }
-  .hero-ctas .btn {
-    width: 100%;
+  .btn-wa:hover{
+    background:linear-gradient(135deg, #fbbf24, #f59e0b);
+    transform:translateY(-2px) scale(1.02);
+    box-shadow:0 12px 28px rgba(245,158,11,0.8);
+    color:#000;
   }
-  .service {
-    padding: 20px;
+  .burger{
+    display:none;
+    background:rgba(0,0,0,0.7);
+    border:1px solid var(--border);
+    color:var(--amarillo-claro);
+    padding:10px 14px;border-radius:40px;cursor:pointer;
   }
-  .feature {
-    padding: 18px;
+
+  /* ===== HERO ===== */
+  .hero{padding:170px 0 100px;position:relative;text-align:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 20px;border-radius:80px;
+    background:rgba(0,0,0,0.65);
+    border:1px solid rgba(245,158,11,0.6);
+    color:var(--amarillo-claro);font-size:.8rem;font-weight:600;
+    margin-bottom:28px;
+    backdrop-filter:blur(5px);
   }
-  .badge {
-    font-size: 0.7rem;
+  .badge .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#fef08a;
+    box-shadow:0 0 8px #fbbf24;
+    animation:pulse 2s infinite;
   }
-  h1 {
-    font-size: 1.9rem;
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+  .hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(2.4rem,6vw,4.6rem);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
   }
-  .metric-value {
-    font-size: 1.6rem;
+  .hero h1 .grad{
+    background:var(--grad-text);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
+  .hero p.lead{
+    font-size:clamp(1rem,1.6vw,1.25rem);
+    color:var(--text-dim);
+    max-width:740px;margin:0 auto 40px;
   }
-  .social-links {
-    gap: 8px;
+  .hero-cta{
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:70px;
   }
-  .social-link {
-    padding: 6px 12px;
-    font-size: 0.7rem;
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:32px 28px;
+    background:rgba(0,0,0,0.55);
+    border:1px solid rgba(245,158,11,0.4);
+    border-radius:44px;
+    backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
   }
-}
-* {
-  transition: border-color 0.2s, background 0.2s, transform 0.1s ease;
-}
+  .stat{text-align:center;}
+  .stat .num{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(1.6rem,3vw,2.3rem);
+    font-weight:800;
+    background:var(--grad-text);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    display:block;line-height:1.2;
+  }
+  .stat .lbl{color:var(--text-mute);font-size:.85rem;margin-top:8px;font-weight:500;letter-spacing:0.3px;}
+
+  /* ===== SECTIONS ===== */
+  section{padding:90px 0;position:relative}
+  .section-head{text-align:center;max-width:780px;margin:0 auto 60px}
+  .eyebrow{
+    display:inline-block;
+    font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--amarillo-base);margin-bottom:14px;
+    background:rgba(217,119,6,0.2);padding:4px 12px;border-radius:30px;
+  }
+  .section-head h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(1.9rem,4vw,2.9rem);
+    font-weight:700;line-height:1.2;letter-spacing:-0.02em;
+    margin-bottom:18px;
+  }
+  .section-head h2 .grad{
+    background:var(--grad-text);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .section-head p{color:var(--text-dim);font-size:1.05rem;max-width:650px;margin:0 auto;}
+
+  /* ===== CARDS & GRID ===== */
+  .grid{display:grid;gap:28px;}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+
+  .card{
+    position:relative;
+    padding:32px 28px;
+    background:rgba(0,0,0,0.6);
+    border:1px solid rgba(245,158,11,0.3);
+    border-radius:32px;
+    backdrop-filter:blur(12px);
+    transition:all 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 30% 10%, rgba(254,240,138,0.08), transparent 70%);
+    opacity:0;transition:opacity .4s;
+  }
+  .card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(254,240,138,0.7);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,158,11,0.3);
+  }
+  .card:hover::before{opacity:1}
+  .card .icon{
+    width:56px;height:56px;border-radius:28px;
+    display:grid;place-items:center;
+    font-size:1.7rem;margin-bottom:22px;
+    background:linear-gradient(145deg, rgba(217,119,6,0.25), rgba(0,0,0,0.6));
+    border:1px solid rgba(254,240,138,0.5);
+    color:var(--amarillo-claro);
+  }
+  .card h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.28rem;font-weight:700;
+    margin-bottom:12px;
+    color:var(--text);
+  }
+  .card p{color:var(--text-dim);font-size:.94rem;line-height:1.45}
+
+  /* Servicios personalizados */
+  .svc{
+    padding:0;
+    border-top:3px solid #f59e0b;
+    border-radius:36px;
+  }
+  .svc .svc-inner{padding:28px 26px 32px;}
+  .svc .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.7rem;font-weight:700;
+    color:var(--amarillo-claro);
+    text-transform:uppercase;
+    background:rgba(217,119,6,0.3);padding:5px 12px;border-radius:40px;
+    margin-bottom:16px;
+  }
+  .svc h3{font-size:1.4rem;margin-bottom:10px; font-weight:700;}
+  .svc p{color:#fdebb3;margin-bottom:20px;}
+  .svc .link{
+    display:inline-flex;align-items:center;gap:6px;
+    color:#fef08a;font-weight:600;font-size:.9rem;
+    text-decoration:none;
+    transition:gap .25s ease, color .2s;
+  }
+  .svc .link:hover{gap:12px;color:#ffffff;text-shadow:0 0 4px #fbbf24;}
+
+  /* ===== CTA ===== */
+  .cta{
+    position:relative;
+    padding:70px 40px;
+    border-radius:60px;
+    background:radial-gradient(circle at 10% 20%, rgba(217,119,6,0.35), transparent 60%),
+               radial-gradient(circle at 90% 70%, rgba(254,240,138,0.2), transparent 65%),
+               linear-gradient(125deg, #010101, #1e1608);
+    border:1px solid rgba(254,240,138,0.5);
+    overflow:hidden;
+    text-align:center;
+    box-shadow:var(--shadow-lg);
+  }
+  .cta::before{
+    content:"";
+    position:absolute;inset:-2px;
+    background:conic-gradient(from 0deg, transparent, #f59e0b, #fef08a, transparent 40%);
+    animation:rotate 10s linear infinite;
+    z-index:0;
+    opacity:0.5;
+  }
+  .cta::after{
+    content:"";
+    position:absolute;inset:2px;
+    background:linear-gradient(135deg, #030303, #1a1205);
+    border-radius:58px;
+    z-index:0;
+  }
+  .cta > *{position:relative;z-index:1;}
+  @keyframes rotate{to{transform:rotate(360deg)}}
+  .cta h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(1.6rem,4vw,2.4rem);
+    font-weight:800;margin-bottom:16px;
+    background:var(--grad-text);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .cta p{color:var(--text-dim);max-width:620px;margin:0 auto 28px; font-size:1.05rem;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;}
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:70px 0 30px;
+    border-top:1px solid rgba(245,158,11,0.3);
+    margin-top:20px;
+    background:linear-gradient(0deg, #000000, #080808);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:44px;
+    margin-bottom:48px;
+  }
+  .footer-grid h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1rem;margin-bottom:18px;
+    color:var(--amarillo-claro);
+    letter-spacing:-0.2px;
+  }
+  .footer-grid p{color:var(--text-dim);font-size:.92rem;max-width:360px;}
+  .socials{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+  .social{
+    width:46px;height:46px;border-radius:40px;
+    display:grid;place-items:center;
+    background:rgba(0,0,0,0.7);
+    border:1px solid rgba(254,240,138,0.4);
+    color:var(--amarillo-base);
+    text-decoration:none;
+    transition:all 0.25s ease;
+    font-size:1.2rem;
+  }
+  .social:hover{
+    color:#000;background:var(--grad-primary);
+    transform:translateY(-4px);
+    border-color:var(--amarillo-claro);
+    box-shadow:0 4px 12px rgba(245,158,11,0.7);
+  }
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .footer-links a{color:var(--text-dim);text-decoration:none;font-size:.92rem;transition:color 0.2s, padding-left 0.2s;}
+  .footer-links a:hover{color:#fef08a;padding-left:4px;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    padding-top:28px;border-top:1px solid rgba(245,158,11,0.25);
+    color:var(--text-mute);font-size:.8rem;
+  }
+  .footer-bottom a{color:var(--text-dim);text-decoration:none;margin-left:20px;}
+  .footer-bottom a:hover{color:#fbbf24;}
+
+  /* ===== FLOATING WHATSAPP con paleta amarilla ===== */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--grad-primary);
+    display:grid;place-items:center;color:#000;font-size:1.8rem;
+    text-decoration:none;
+    box-shadow:0 10px 28px rgba(217,119,6,0.6), 0 0 0 0 rgba(245,158,11,0.5);
+    z-index:90;
+    animation:float 3.8s ease-in-out infinite, pingGlow 2.2s infinite;
+    transition:transform .25s;
+  }
+  .wa-float:hover{transform:scale(1.1) translateY(-3px); background:linear-gradient(135deg,#fbbf24,#f59e0b);}
+  @keyframes pingGlow{
+    0%{box-shadow:0 8px 20px rgba(217,119,6,0.6), 0 0 0 0 rgba(245,158,11,0.6);}
+    80%,100%{box-shadow:0 8px 20px rgba(217,119,6,0.5), 0 0 0 18px rgba(245,158,11,0);}
+  }
+
+  /* ===== ANIMACIONES ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity 0.75s ease, transform 0.7s cubic-bezier(0.2,0.9,0.4,1);
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal.d1{transition-delay:0.08s}
+  .reveal.d2{transition-delay:0.16s}
+  .reveal.d3{transition-delay:0.25s}
+  .reveal.d4{transition-delay:0.34s}
+
+  /* ===== RESPONSIVE MEJORADO ===== */
+  @media (max-width: 1024px){
+    .grid-4{grid-template-columns:repeat(2,1fr); gap:24px;}
+  }
+  @media (max-width: 860px){
+    .hero-stats{grid-template-columns:repeat(2,1fr); gap:20px; padding:26px;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:36px;}
+    .hero{padding:150px 0 70px;}
+  }
+  @media (max-width: 720px){
+    .nav-links{
+      position:fixed; inset:72px 0 auto 0;
+      flex-direction:column;align-items:stretch;gap:4px;
+      background:rgba(0,0,0,0.96);
+      backdrop-filter:blur(24px);
+      padding:24px;
+      border-bottom:1px solid var(--border);
+      transform:translateY(-140%);
+      transition:transform 0.3s ease;
+      border-radius:0 0 32px 32px;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{width:100%;}
+    .nav-links a{display:block;padding:12px 18px;border-radius:30px;}
+    .burger{display:inline-flex;}
+    .hero-cta .btn{width:100%; justify-content:center;}
+    .hero-cta{flex-direction:column; align-items:stretch;}
+    .grid-4{grid-template-columns:1fr;}
+    .grid-2{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
+    .footer-bottom{flex-direction:column; align-items:center; text-align:center;}
+    .footer-bottom a{margin:0 10px;}
+    .cta{padding:48px 20px;}
+    section{padding:70px 0;}
+    .card{padding:28px 20px;}
+    .brand-img{width:38px;height:38px;}
+  }
+  @media (max-width: 480px){
+    .hero-stats{grid-template-columns:1fr; gap:16px;}
+    .stat .num{font-size:1.9rem;}
+    .hero h1{font-size:clamp(1.8rem, 10vw, 2.8rem);}
+    .btn{padding:10px 18px; font-size:.85rem;}
+  }
+  /* adaptabilidad adicional tablet/pc */
+  @media (min-width: 1440px){
+    .container{width:min(1320px, 88%);}
+    .hero h1{font-size:4.8rem;}
+  }
 </style>
 </head>
 <body>
 
-<header class="header" id="header">
-  <nav class="nav">
-    <a href="#" class="logo">
-      <img src="pq.jpg" alt="Pedro Marqueting" />
-      <span>Pedro Marqueting</span>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<!-- ===== NAVBAR con logo imagen pq.jpg ===== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand" aria-label="Pedro Marqueting">
+      <img src="pq.jpg" alt="Pedro Marqueting" class="brand-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23f59e0b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23000%22%20font-size%3D%2218%22%3EPM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+      <div class="brand-text">Pedro <span>Marqueting</span></div>
     </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">Nosotros</a>
-      <a href="#services">Servicios</a>
-      <a href="#contact">Contacto</a>
-      <a href="https://wa.me/5352669554" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp</a>
-    </div>
-    <a href="https://wa.me/5352669554" target="_blank" rel="noopener" class="btn btn-whatsapp btn-menu">WhatsApp</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span></button>
-  </nav>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="https://wa.me/5352669554" class="btn btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
 </header>
 
-<main>
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="container">
-    <div class="hero-inner">
-      <span class="badge"><span class="badge-dot"></span> Pedro Marqueting · Publicidad que convierte</span>
-      <h1>Haz crecer tu negocio con <span class="gradient-text">publicidad que vende</span></h1>
-      <p>Aumentamos tus ventas y visibilidad con campañas medibles, rentables y diseñadas para conseguir clientes reales, no solo likes.</p>
-      <div class="hero-ctas">
-        <a href="https://wa.me/5352669554" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">💬 Chatear por WhatsApp →</a>
-        <a href="#services" class="btn btn-ghost btn-lg">Ver servicios</a>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="metric-value">+150</div><div class="metric-label">Clientes activos</div></div>
-        <div class="metric"><div class="metric-value">3.2x</div><div class="metric-label">Más conversión</div></div>
-        <div class="metric"><div class="metric-value">24/7</div><div class="metric-label">Campañas activas</div></div>
-        <div class="metric"><div class="metric-value">5.8x</div><div class="metric-label">ROI promedio</div></div>
-      </div>
+    <div class="badge reveal">
+      <span class="dot"></span>
+      <span>Pedro Marqueting · Publicidad que vende de verdad</span>
+    </div>
+    <h1 class="reveal d1">
+      Lleva tu negocio al <span class="grad">siguiente nivel</span><br>
+      con campañas que generan ventas
+    </h1>
+    <p class="lead reveal d2">
+      Olvídate de los “me gusta” vacíos. Creamos anuncios estratégicos que atraen clientes reales, medibles y dispuestos a comprar.    </p>
+    <div class="hero-cta reveal d3">
+      <a href="https://wa.me/5352669554" class="btn btn-wa" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
+      </a>
+      <a href="#services" class="btn btn-ghost">
+        <i class="fa-solid fa-bolt"></i> Explorar servicios
+      </a>
+    </div>
+
+    <div class="hero-stats reveal d4">
+      <div class="stat"><span class="num" data-count="150">0</span><span class="lbl">Clientes activos</span></div>
+      <div class="stat"><span class="num" data-count="3.2" data-decimals="1">0</span><span class="lbl">Más conversión</span></div>
+      <div class="stat"><span class="num">24/7</span><span class="lbl">Campañas activas</span></div>
+      <div class="stat"><span class="num" data-count="5.8" data-decimals="1">0</span><span class="lbl">ROI promedio</span></div>
     </div>
   </div>
 </section>
 
+<!-- ===== NOSOTROS ===== -->
 <section id="about">
   <div class="container">
-    <div class="section-head">
-      <span class="section-label">Sobre nosotros</span>
-      <h2>Marketing que transforma ideas en <span class="gradient-text">resultados reales</span></h2>
-      <p>Estrategia, creatividad y datos para que tu negocio gane visibilidad y clientes dispuestos a comprar.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Nosotros</span>
+      <h2>Estrategia, datos y <span class="grad">creatividad</span> para resultados extraordinarios</h2>
+      <p>No solo prometemos alcance: aseguramos crecimiento real con métricas que importan.</p>
     </div>
-    <div class="features">
-      <div class="feature"><div class="feature-icon">🎯</div><h3>Estrategia a medida</h3><p>Plan único alineado a tu negocio y objetivos comerciales.</p></div>
-      <div class="feature"><div class="feature-icon">📈</div><h3>Resultados medibles</h3><p>Reportes claros, métricas en tiempo real, sin rodeos.</p></div>
-      <div class="feature"><div class="feature-icon">⚡</div><h3>Activación rápida</h3><p>Campañas listas en días, tráfico desde la primera semana.</p></div>
-      <div class="feature"><div class="feature-icon">🤝</div><h3>Soporte cercano</h3><p>Equipo real que te acompaña y optimiza cada paso.</p></div>
+
+    <div class="grid grid-4">
+      <article class="card reveal d1"><div class="icon">🎯</div><h3>Estrategia a medida</h3><p>Analizamos tu negocio y diseñamos un plan único para multiplicar tus ventas.</p></article>
+      <article class="card reveal d2"><div class="icon">📈</div><h3>Resultados medibles</h3><p>Dashboards en tiempo real, informes semanales sin rodeos y KPIs claros.</p></article>
+      <article class="card reveal d3"><div class="icon">⚡</div><h3>Activación rápida</h3><p>Campañas listas en 48h, tráfico desde los primeros días y optimización continua.</p></article>
+      <article class="card reveal d4"><div class="icon">🤝</div><h3>Soporte cercano</h3><p>Atención personalizada, equipo humano real que te acompaña 24/7.</p></article>
     </div>
   </div>
 </section>
 
-<section id="services" style="background:#0e0e15;">
+<!-- ===== SERVICIOS ===== -->
+<section id="services">
   <div class="container">
-    <div class="section-head">
-      <span class="section-label">Servicios</span>
-      <h2>Soluciones para hacer <span class="gradient-text">crecer tu marca</span></h2>
-      <p>Publicidad digital integral, adaptada a tu presupuesto y objetivos.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Soluciones diseñadas para <span class="grad">escalar tu marca</span></h2>
+      <p>Publicidad integral, desde diseño hasta tráfico local y posicionamiento orgánico.</p>
     </div>
-    <div class="services">
-      <div class="service"><span class="service-tag">Diseño visual</span><h3>Pósters y Creatividades Digitales</h3><p>Piezas visuales impactantes para redes sociales y campañas de alto rendimiento.</p><span class="service-link">Solicitar muestra →</span></div>
-      <div class="service"><span class="service-tag">Tráfico pago</span><h3>Campañas en Redes Sociales</h3><p>Anuncios en Facebook, Instagram y Telegram segmentados a tu cliente ideal.</p><span class="service-link">Conocer estrategia →</span></div>
-      <div class="service"><span class="service-tag">Posicionamiento</span><h3>SEO y Posicionamiento Orgánico</h3><p>Mejora tu posición en Google cuando tus clientes te buscan.</p><span class="service-link">Ver plan SEO →</span></div>
-      <div class="service"><span class="service-tag">Alcance local</span><h3>Publicidad en Plataformas Locales</h3><p>Presencia en Revolico, Timbiriche y portales con alto tráfico local.</p><span class="service-link">Activar campañas →</span></div>
+    <div class="grid grid-2">
+      <article class="card svc reveal d1"><div class="svc-inner"><span class="tag"><i class="fa-solid fa-palette"></i> Diseño visual</span><h3>Pósters y Creatividades Digitales</h3><p>Piezas visuales de alto impacto para redes y campañas que convierten.</p><a href="https://wa.me/5352669554" class="link" target="_blank">Solicitar muestra <i class="fa-solid fa-arrow-right"></i></a></div></article>
+      <article class="card svc reveal d2"><div class="svc-inner"><span class="tag"><i class="fa-solid fa-coins"></i> Tráfico pago</span><h3>Campañas en Redes Sociales</h3><p>Segmentación láser en Facebook, Instagram y Telegram para llegar a tu cliente ideal.</p><a href="https://wa.me/5352669554" class="link" target="_blank">Conocer estrategia <i class="fa-solid fa-arrow-right"></i></a></div></article>
+      <article class="card svc reveal d3"><div class="svc-inner"><span class="tag"><i class="fa-solid fa-chart-line"></i> Posicionamiento</span><h3>SEO y Posicionamiento Orgánico</h3><p>Aparece en los primeros resultados de Google cuando más te necesitan.</p><a href="https://wa.me/5352669554" class="link" target="_blank">Ver plan SEO <i class="fa-solid fa-arrow-right"></i></a></div></article>
+      <article class="card svc reveal d4"><div class="svc-inner"><span class="tag"><i class="fa-solid fa-location-dot"></i> Alcance local</span><h3>Publicidad en Plataformas Locales</h3><p>Presencia garantizada en Revolico, Timbiriche y portales con tráfico local masivo.</p><a href="https://wa.me/5352669554" class="link" target="_blank">Activar campañas <i class="fa-solid fa-arrow-right"></i></a></div></article>
     </div>
   </div>
 </section>
 
-<section class="cta-section" id="contact">
+<!-- ===== CTA ===== -->
+<section id="contact">
   <div class="container">
-    <div class="cta-card">
-      <h2>Tu negocio no solo se muestra: se vende.</h2>
-      <p>Recibe un diagnóstico gratuito y empieza a multiplicar resultados esta semana.</p>
-      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:24px">
-        <a href="https://wa.me/5352669554" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">💬 WhatsApp: +53 5 2669554</a>
-      </div>
-    </div>
-    <div class="social-section">
-      <div class="social-title">Síguenos en redes oficiales</div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61585840056337&mibextid=ZbWKwL" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.315 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook
-        </a>
-        <a href="https://t.me/ventasyprover" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram
-        </a>
-        <a href="https://www.revolico.com/profile/FaGJHXV4JjoYepLMmSYWAsTD" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg> Revolico
-        </a>
+    <div class="cta reveal">
+      <h2>Tu negocio no puede esperar: resultados desde la primera semana</h2>
+      <p>Recibe un diagnóstico gratuito y descubre cómo duplicar tu facturación con publicidad efectiva.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5352669554" class="btn btn-primary" target="_blank"><i class="fa-solid fa-stethoscope"></i> Pedir diagnóstico</a>
       </div>
     </div>
   </div>
 </section>
-</main>
 
+<!-- ===== FOOTER con logo pq.jpg ===== -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-text">© 2026 Pedro Marqueting | KOOWEXA · Publicidad digital efectiva</div>
-      <div class="footer-links">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="brand" style="margin-bottom:14px">
+          <img src="pq.jpg" alt="Pedro Marqueting" class="brand-img" style="width:44px;height:44px;" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23f59e0b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23000%22%20font-size%3D%2218%22%3EPM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+          <div class="brand-text">Pedro <span>Marqueting</span></div>
+        </a>
+        <p>🌐 Conéctate con nosotros en redes oficiales. Publicidad digital que transforma negocios, con estrategia, datos y creatividad.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61585840056337&mibextid=ZbWKwL" class="social fb" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://t.me/ventasyprover" class="social tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://www.revolico.com/profile/FaGJHXV4JjoYepLMmSYWAsTD" class="social rv" target="_blank"><i class="fa-solid fa-store"></i></a>
+          <a href="https://wa.me/5352669554" class="social" target="_blank" style="color:#fbbf24"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4>Navegación</h4><ul class="footer-links"><li><a href="#about">Nosotros</a></li><li><a href="#services">Servicios</a></li><li><a href="#contact">Contacto</a></li><li><a href="https://wa.me/5352669554" target="_blank">WhatsApp directo</a></li></ul></div>
     </div>
   </div>
 </footer>
 
-<div class="whatsapp-float">
-  <a href="https://wa.me/5352669554" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 32 32"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.587-.243-.887-.487-1.088zM16 3C8.83 3 3 8.83 3 16s5.83 13 13 13c2.54 0 4.92-.73 6.93-2l-3.17-3.17c-.73.33-1.53.52-2.36.52-2.94 0-5.34-2.4-5.34-5.34 0-.83.19-1.63.52-2.36L9.41 9.41C8.08 10.74 7.35 13.12 7.35 15.66c0 4.77 3.89 8.66 8.66 8.66 2.54 0 4.92-.73 6.25-2.06L29 25.03C27.67 27.16 25.29 29 16 29c-7.17 0-13-5.83-13-13S8.83 3 16 3z"/></svg>
-  </a>
-</div>
+<a href="https://wa.me/5352669554" class="wa-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script>
-  const header = document.getElementById('header');
-  const toggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  }, { passive: true });
-
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    navLinks.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      navLinks.classList.remove('open');
+  (function(){
+    const nav = document.getElementById('nav');
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    const counters = document.querySelectorAll('[data-count]');
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1300;
+        const start = performance.now();
+        const step = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1-p, 3);
+          const val = (target * eased).toFixed(decimals);
+          el.textContent = decimals > 0 ? val + 'x' : '+' + Math.floor(val);
+          if(p < 1) requestAnimationFrame(step);
+          else el.textContent = decimals > 0 ? target.toFixed(decimals) + 'x' : '+' + target;
+        };
+        requestAnimationFrame(step);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.45 });
+    counters.forEach(c => cio.observe(c));
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (ev) => {
+        const id = a.getAttribute('href');
+        if(id && id.length > 1){
+          const t = document.querySelector(id);
+          if(t){ ev.preventDefault(); const top = t.getBoundingClientRect().top + window.scrollY - 75; window.scrollTo({ top, behavior: 'smooth' }); }
+        }
+      });
     });
-  });
+  })();
 </script>
 </body>
 </html>
