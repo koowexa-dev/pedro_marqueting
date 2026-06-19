@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koowexa-dev.github.io/pedro_marqueting/sitemap.xml
